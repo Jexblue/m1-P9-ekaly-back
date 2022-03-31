@@ -4,7 +4,7 @@ import {ConnectionOptions} from "typeorm";
 
 export const dbConnection: ConnectionOptions = {
     type: 'mongodb',
-    url: process.env.DATABASE_URI,
+    url: process.env.MONGO_URI,
     database: 'EKALY',
     ssl: true,
     useNewUrlParser: true,
