@@ -11,7 +11,11 @@ const UsersSchema = new mongoose.Schema({
     },
     birthday :{
       type: Date,
-      required: [true, "L'email est obligatoire"]
+      required: [false, "pas obligatoire"]
+    },
+    password :{
+      type: String,
+      required: [true, "Le mot de passe est obligatoire"]
     }
 });
 

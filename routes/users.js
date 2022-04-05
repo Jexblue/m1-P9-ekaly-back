@@ -24,9 +24,17 @@ router.get('/', async function(req, res, next) {
   res.send(data);
 });
 
+/* Create a new user */
 router.post("/register", async function(req, res, next){
-
   userController.addNewUser(req.body, (error, user) => {
+    if(error) return next(error);
+      res.json(user);
+  })
+
+})
+
+router.post("/login", async function(req, res, next){
+  userController.logUser(req.body, (error, user) => {
     if(error) return next(error);
       res.json(user);
   })

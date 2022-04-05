@@ -2,27 +2,16 @@ var User = require('../model/user')
 
 const addNewUser = (user, next) => {
     User.startSession().then(async (session) => {
-  
-      const newUser = new User(user);
-  
-      await session.withTransaction(async () =>{
-  
+      const newUser = new User(user);  
+      await session.withTransaction(async () =>{ 
         await newUser.save((error, newUser) => {
-  
-          if (error) return next(error);
-  
-         // const token = generateToken(newUser);
-  
-         // newUser.token = token;
-  
-          next(null, newUser);
-  
-        });
-  
+          if (error) return next(error); 
+         // const token = generateToken(newUser);  
+         // newUser.token = token;  
+          next(null, newUser);  
+        });  
       })
-  
-      session.endSession();
-  
+      session.endSession(); 
     })/*.then(() => {
   
       User.findOne({_id:user._id}).populate("profile_id").exec((err, usr) => {
@@ -33,8 +22,11 @@ const addNewUser = (user, next) => {
   
       })
   
-    })*/;
-  
+    })*/;  
   };
+
+  /*const logUser = (user, next) => {
+
+  }*/
 
   module.exports = {addNewUser};
