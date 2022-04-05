@@ -33,12 +33,12 @@ router.post("/register", async function(req, res, next){
 
 })
 
-router.post("/login", async function(req, res, next){
+/*router.post("/login", async function(req, res, next){
   userController.logUser(req.body, (error, user) => {
     if(error) return next(error);
       res.json(user);
   })
 
-})
+})*/
 
 module.exports = router;
