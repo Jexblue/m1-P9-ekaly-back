@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Users = require('../model/user');
+var userController = require('../controller/userController')
 
 var data = {
   'message' : "Ok",
@@ -22,5 +23,14 @@ router.get('/', async function(req, res, next) {
   }
   res.send(data);
 });
+
+router.post("/register", async function(req, res, next){
+
+  userController.addNewUser(req.body, (error, user) => {
+    if(error) return next(error);
+      res.json(user);
+  })
+
+})
 
 module.exports = router;
