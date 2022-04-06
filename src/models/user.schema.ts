@@ -6,6 +6,7 @@ export interface IUser extends mongoose.Document {
     firstName: string;
     lastName: string;
     age: number;
+    status: number;
 
 }
 
@@ -14,7 +15,11 @@ const userSchema = new mongoose.Schema(
     {
         firstName: String,
         lastName: String,
-        age: { type: Number, min: 18, max: 100 }
+        adresse: String,
+        numero: String,
+        email: String,
+        fb: String,
+        status: { type: Number, min: 18, max: 100 }
     },
     {
         timestamps: true
