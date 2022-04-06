@@ -9,7 +9,7 @@ export interface IUser extends mongoose.Document {
     numero: string;
     email: string;
     fb: string;
-    status: number;
+    status: Number;
 
 }
 
