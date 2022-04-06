@@ -7,6 +7,7 @@ import { connectWithMongoose } from "./utils/database/database.utils";
 import { createExpressServer, useExpressServer } from "routing-controllers";
 import { DefaultController } from "./controllers/default.controller";
 import { UserController } from "./controllers/user.controller";
+import { SakafoController } from "./controllers/sakafo.controller";
 
 
 class Server {
@@ -79,7 +80,8 @@ class Server {
 
 const server: Server = new Server([
     DefaultController,
-    UserController
+    UserController,
+    SakafoController
 ]);
 
 server.run().then(() => {
