@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema(
         numero: String,
         email: String,
         fb: String,
-        status: { type: Number, min: 18, max: 100 }
+        status: Number
     },
     {
         timestamps: true
