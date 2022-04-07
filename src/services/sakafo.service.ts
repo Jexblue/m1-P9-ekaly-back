@@ -47,7 +47,7 @@ export class SakafoService{
 
         if (isEmpty(currentSakafo)) throw new Error('No sakafo found');
 
-        currentSakafo!.menu = sakafoData.menu;
+        currentSakafo!.nomPlat = sakafoData.nomPlat;
         currentSakafo!.status = sakafoData.status;
 
         await currentSakafo!.save();
