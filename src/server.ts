@@ -81,7 +81,7 @@ class Server {
 const server: Server = new Server([
     DefaultController,
     UserController,
-    SakafoController
+    SakafoController,
 ]);
 
 server.run().then(() => {

@@ -1,4 +1,4 @@
-import Sakafo, { ISakafo } '../models/sakafo.schema';
+import Sakafo, { ISakafo } from '../models/sakafo.schema';
 import { isEmpty } from "../utils/utils.service";
 
 export class SakafoService{
