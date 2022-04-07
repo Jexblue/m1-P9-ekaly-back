@@ -3,8 +3,9 @@ import mongoose from "mongoose";
 
 export interface ISakafo extends mongoose.Document {
 
-    menu: string;
+    nomPlat: string;
     image: string;
+    restaurant: string;
     status: Number;
     cout: Number;
     prix: Number;
@@ -14,8 +15,9 @@ export interface ISakafo extends mongoose.Document {
 
 const userSakafo = new mongoose.Schema(
     {
-        menu: String,
+        nomPlat: String,
         image: String,
+        restaurant: String,
         status: String,
         cout: String,
         prix: String
