@@ -10,7 +10,7 @@ export class SakafoController {
 
 
     @Post()
-    async createUser(@Body() sakafoData: ISakafo): Promise<any> {
+    async createSakafo(@Body() sakafoData: ISakafo): Promise<any> {
 
         try {
 
@@ -27,7 +27,7 @@ export class SakafoController {
     }
 
     @Put('/:sakafo_id')
-    async updateUser(@Param('sakafo_id') sakafoID: string, @Body() sakafoData: ISakafo): Promise<any> {
+    async updateSakafo(@Param('sakafo_id') sakafoID: string, @Body() sakafoData: ISakafo): Promise<any> {
 
         try {
 
@@ -44,7 +44,7 @@ export class SakafoController {
     }
 
     @Delete('/:sakafo_id')
-    async removeUser(@Param('sakafo_id') sakafoID: string): Promise<any> {
+    async removeSakafo(@Param('sakafo_id') sakafoID: string): Promise<any> {
 
         try {
 
@@ -78,7 +78,7 @@ export class SakafoController {
     }
 
     @Get('/:sakafo_id')
-    async getUserById(@Param('sakafo_id') sakafoID: string): Promise<any> {
+    async getSakafoById(@Param('sakafo_id') sakafoID: string): Promise<any> {
 
         try {
 
