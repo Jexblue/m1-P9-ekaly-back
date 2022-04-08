@@ -16,8 +16,13 @@ export class CommandeService {
 
         if (isEmpty(commandeData)) throw new Error('No data found');
 
+         Commande
+            .create({ ...commandeData }, (error, data) => {
+                console.log(error);
+            });
+
         return await Commande
-            .create({ ...commandeData });
+            .create({ ...commandeData});
 
     }
 

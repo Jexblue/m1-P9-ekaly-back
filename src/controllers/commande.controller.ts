@@ -15,7 +15,7 @@ export class CommandeController {
 
             const commande = await this.commandeService.createCommande(commandeData);
 
-            return await formatResponse(200, 'Sakafo created', commande);
+            return await formatResponse(200, 'Commande created', commande);
 
         } catch (error: any) {
 
