@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-/* import this.sakafoSchema from "./sakafo.schema"; */
 import sakafoSchema, { ISakafo } from "./sakafo.schema";
 import { IUser } from "./user.schema";
 
@@ -20,7 +19,10 @@ const commandeSchema = new mongoose.Schema ({
     sakafo : {type : mongoose.Schema.Types.ObjectId, ref : 'Sakafo'},
     client : {type : mongoose.Schema.Types.ObjectId, ref : 'User'},
     livreur : {type : mongoose.Schema.Types.ObjectId, ref: 'User'},
-    dateCommande : Date,
+    dateCommande : {
+        type: Date,
+        default: new Date()
+    },
     fraisLivraison : Number,
     etat : Number
     
