@@ -33,7 +33,7 @@ export class SakafoController {
 
             const sakafo = await this.sakafoService.updateSakafo(sakafoID, sakafoData);
 
-            return await formatResponse(200, 'User updated', sakafo);
+            return await formatResponse(200, 'Sakafo updated', sakafo);
 
         } catch (error: any) {
 
@@ -50,7 +50,7 @@ export class SakafoController {
 
             const sakafo = await this.sakafoService.removeSakafo(sakafoID);
 
-            return await formatResponse(200, 'User removed', sakafo);
+            return await formatResponse(200, 'commande removed', sakafo);
 
         } catch (error: any) {
 
