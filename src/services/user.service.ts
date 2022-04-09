@@ -53,10 +53,7 @@ export class UserService {
 
         currentUser!.firstName = userData.firstName;
         currentUser!.lastName = userData.lastName;
-        currentUser!.adresse = userData.adresse;
-        currentUser!.numero = userData.numero;
         currentUser!.email = userData.email;
-        currentUser!.fb = userData.fb;
 
         await currentUser!.save();
 
