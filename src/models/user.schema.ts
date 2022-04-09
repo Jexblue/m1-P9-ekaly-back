@@ -5,10 +5,8 @@ export interface IUser extends mongoose.Document {
 
     firstName: string;
     lastName: string;
-    adresse: string;
-    numero: string;
     email: string;
-    fb: string;
+    password: string;
     status: Number;
 
 }
@@ -18,10 +16,8 @@ const userSchema = new mongoose.Schema(
     {
         firstName: String,
         lastName: String,
-        adresse: String,
-        numero: String,
         email: String,
-        fb: String,
+        password: String,
         status: Number
     },
     {

@@ -8,7 +8,7 @@ export class SakafoService{
         if (isEmpty(sakafoID)) throw new Error('No ID found');
 
         return await Sakafo
-            .findById(sakafoID) as ISakafo;
+            .findById(sakafoID).lean() as ISakafo;
 
     }
 
@@ -59,7 +59,7 @@ export class SakafoService{
     public async findAllSakafo(): Promise<ISakafo[]> {
 
         return await Sakafo
-            .find();
+            .find().lean();
 
     }
 

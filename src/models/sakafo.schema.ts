@@ -6,9 +6,10 @@ export interface ISakafo extends mongoose.Document {
     nomPlat: string;
     image: string;
     restaurant: string;
+    coutPlat: Number;
+    prixPlat: Number;
+    benefice: Number;
     status: Number;
-    cout: Number;
-    prix: Number;
 
 }
 
@@ -18,9 +19,10 @@ const userSakafo = new mongoose.Schema(
         nomPlat: String,
         image: String,
         restaurant: String,
-        status: String,
-        cout: String,
-        prix: String
+        coutPlat: Number,
+        prixPlat: Number,
+        benefice: Number,
+        status: Number
     },
     {
         timestamps: true

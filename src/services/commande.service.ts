@@ -1,4 +1,5 @@
 import Commande, { ICommande } from '../models/commande.schema';
+import sakafoSchema from '../models/sakafo.schema';
 import { isEmpty } from "../utils/utils.service";
 
 export class CommandeService {
@@ -8,7 +9,7 @@ export class CommandeService {
         if (isEmpty(commandeID)) throw new Error('No ID found');
 
         return await Commande
-            .findById(commandeID) as ICommande;
+            .findById(commandeID).populate("sakafo").lean() as ICommande;
 
     }
 
@@ -60,7 +61,7 @@ export class CommandeService {
     public async findAllCommande(): Promise<ICommande[]> {
 
         return await Commande
-            .find();
+            .find().populate("sakafo").lean();
 
     }
 

@@ -9,7 +9,7 @@ export class UserService {
         if (isEmpty(userID)) throw new Error('No ID found');
 
         return await User
-            .findById(userID) as IUser;
+            .findById(userID).lean() as IUser;
 
     }
 
@@ -68,7 +68,7 @@ export class UserService {
     public async findAllUsers(): Promise<IUser[]> {
 
         return await User
-            .find();
+            .find().lean();
 
     }
 

@@ -5,25 +5,27 @@ import { IUser } from "./user.schema";
 
 export interface ICommande extends mongoose.Document {
     
-    sakafo: ISakafo;
+    sakafo: ISakafo[];
     client: IUser;
     livreur: IUser;
     dateCommande: Date;
     fraisLivraison: Number;
+    adresse: String;
     etat: Number;
 
 }
 
 const commandeSchema = new mongoose.Schema ({
    
-    sakafo : {type : mongoose.Schema.Types.ObjectId, ref : 'Sakafo'},
-    client : {type : mongoose.Schema.Types.ObjectId, ref : 'User'},
-    livreur : {type : mongoose.Schema.Types.ObjectId, ref: 'User'},
+    sakafo : [{type : String, ref : 'Sakafo'}],
+    client : {type : String, ref : 'User'},
+    livreur : {type : String, ref: 'User'},
     dateCommande : {
         type: Date,
         default: new Date()
     },
     fraisLivraison : Number,
+    adresse: String,
     etat : Number
     
 });
