@@ -17,6 +17,7 @@ export interface ICommande extends mongoose.Document {
 
 const commandeSchema = new mongoose.Schema ({
    
+    _id: String,
     sakafo : [{type : String, ref : 'Sakafo'}],
     client : {type : String, ref : 'User'},
     livreur : {type : String, ref: 'User'},

@@ -1,6 +1,6 @@
 import Commande, { ICommande } from '../models/commande.schema';
-import sakafoSchema from '../models/sakafo.schema';
 import { isEmpty } from "../utils/utils.service";
+import mongoose from 'mongoose';
 
 export class CommandeService {
 
@@ -16,6 +16,8 @@ export class CommandeService {
     public async createCommande(commandeData: ICommande): Promise<ICommande> {
 
         if (isEmpty(commandeData)) throw new Error('No data found');
+
+        Object.assign(commandeData, { _id: String(new mongoose.mongo.ObjectId()) });
 
         return await Commande
             .create({ ...commandeData });
