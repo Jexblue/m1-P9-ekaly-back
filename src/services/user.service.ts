@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import User, { IUser } from '../models/user.schema';
 import { isEmpty } from "../utils/utils.service";
 
@@ -18,8 +19,16 @@ export class UserService {
 
         if (isEmpty(userData)) throw new Error('No data found');
 
-        return await User
+        Object.assign(userData, { _id: String(new mongoose.mongo.ObjectId()) });
+
+         return await User
             .create({ ...userData });
+
+        /*const createdUser = new User({ ...userData });
+
+        await createdUser.save();
+
+        return await this.findUserById(createdUser._id);*/
 
     }
 
