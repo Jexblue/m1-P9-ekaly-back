@@ -16,6 +16,7 @@ export interface ISakafo extends mongoose.Document {
 
 const userSakafo = new mongoose.Schema(
     {
+        _id: String,
         nomPlat: String,
         image: String,
         restaurant: String,

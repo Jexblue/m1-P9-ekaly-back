@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Sakafo, { ISakafo } from '../models/sakafo.schema';
 import { isEmpty } from "../utils/utils.service";
 
@@ -15,6 +16,8 @@ export class SakafoService{
     public async createSakafo(sakafoData: ISakafo): Promise<ISakafo> {
 
         if (isEmpty(sakafoData)) throw new Error('No data found');
+
+        Object.assign(sakafoData, { _id: String(new mongoose.mongo.ObjectId()) });
 
         return await Sakafo
             .create({ ...sakafoData });
