@@ -46,5 +46,9 @@
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.9.0",
     "validator": "^13.7.0"
+  },
+  "engines" : { 
+    "node" : "12.6.0",
+    "npm" : "6.9.0"
   }
 }
